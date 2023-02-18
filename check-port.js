@@ -1,8 +1,8 @@
 import { exec } from 'child_process';
 
 // Define the range of ports to check
-const startPort = 3000;
-const endPort = 3010;
+const startPort = process.argv[2] || 3000;
+const endPort = process.argv[3] || 3005;
 
 // Run the netstat command to get a list of listening ports
 exec('netstat -a -n -p TCP', (err, stdout, stderr) => {
